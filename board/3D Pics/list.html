@@ -1,0 +1,147 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/viewerjs/dist/viewer.min.js)-->
+<!--@css(/viewerjs/dist/viewer.min.css)-->
+
+<div module="Board_ListPackage_3001">
+<!--@css(/css/module/board/54/listpackage_3001.css)-->
+    <div id="titleArea" module="board_title_3001">
+        <h2>{$board_name}</h2>
+        <span module="Layout_MobileAction">
+            <a href="#none" onclick="{$go_back}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/layout/btn_back.gif" width="33" alt="뒤로가기" /></a>
+        </span>
+    </div>
+
+    <div class="{$write_display|display}" module="board_ButtonList"><a href="/board/3D Pics/write.html{$param_write}" class="btnStrong">글쓰기</a></div>
+
+    <div class="boardSort">
+        <span module="board_category_3001">{$form.board_category}</span>
+        <span module="board_ReplySort_3001">{$reply_sort}</span>
+    </div>
+
+    <ul module="board_notice_3001">
+        <!--
+            $count = 2
+            $subject_cut = 22
+            $login_page_url = /member/login.html
+            $deny_access_url = /index.html
+        -->
+        <li>
+            <p class="summary">
+                <a href="/board/free/read.html{$param_read}">
+                    <strong class="subject">{$notice_icon} {$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+        <li>
+            <p class="summary">
+                <a href="/board/3D Pics/read.html{$param_read}">
+                    <strong class="subject">{$notice_icon} {$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+    </ul>
+
+    <ul module="board_fixed_3001">
+        <!--
+            $count = 2
+            $subject_cut = 22
+            $login_page_url = /member/login.html
+            $deny_access_url = /index.html
+        -->
+        <li>
+            <p class="summary">
+                <a href="/board/3D Pics/read.html{$param_read}">
+                    <strong class="subject">{$fixed_icon} {$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+        <li>
+            <p class="summary">
+                <a href="/board/3D Pics/read.html{$param_read}">
+                    <strong class="subject">{$fixed_icon} {$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+    </ul>
+
+    <ul module="board_list_3001">
+        <!--
+            $subject_cut = 22
+            $login_page_url = /member/login.html
+            $deny_access_url = /index.html
+        -->
+        <li>
+            <p class="summary">
+                <a href="/board/3D Pics/read.html{$param_read}">
+                    <strong class="subject">{$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+        <li>
+            <p class="summary">
+                <a href="/board/3D Pics/read.html{$param_read}">
+                    <strong class="subject">{$icon_re} {$icon_lock} {$icon_mobile} {$subject} <span class="comment">{$comment_count}</span> {$icon_hit} {$icon_file} {$icon_new}</strong>
+                    <span class="{$category_display|display}" title="카테고리">{$category_name}</span>
+                    <span class="name" title="작성자">{$writer}</span>
+                    <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                    <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                    <span class="{$vote_display|display}">추천 {$vote}</span>
+                    <span class="point {$point_display|display}"><img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png" alt="{$point_count}점" /></span>
+                </a>
+            </p>
+        </li>
+    </ul>
+
+    <p module="board_empty_3001" class="empty {$empty_display|display}">{$empty_message}</p>
+</div>
+
+
+<!-- //참고 -->
+
+<!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+<!-- //참고 -->
+
+<div module="product_listmore" class="ec-base-paginate typeMoreview">
+    <a href="#none" onclick="{$more_action}" class="btnMore">
+        더보기(<span id="more_current_page">{$current_page}</span>/<span id="more_total_page">{$total_page}</span>)<span class="icoMore"></span>
+    </a>
+</div>
+
+<script type="text/javascript">
+      document.getElementById('images').addEventListener('click', function () {
+        var viewer = new Viewer(document.getElementById('images'), {
+          	navbar: false,
+        });
+        viewer.show();
+      });
+</script>

@@ -1,0 +1,20 @@
+<nav module="Layout_MobileNavigation">
+    <!--@css(/css/module/layout/mobileNavigation.css)-->
+    <!--
+        $eventmenu = yes
+    -->
+    <ul class="{$navigation_grid}">
+        <li module="Layout_statelogoff"><a href="/member/login.html">로그인</a></li>
+        <li module="Layout_statelogon"><a href="{$action_logout}">로그아웃</a></li>
+        <li><a href="/board/3D Toons/list.html?cate_no=28">3D Toons</a></li>
+        <li><a href="/board/3D Pics/list.html?cate_no=28">3D Pics</a></li>
+        <li><a href="/board/free/list.html">사진</a></li>
+        <li><a href="/board/QnA/list.html">Q&A</a></li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+		text-align: center;
+    }
+</style>
