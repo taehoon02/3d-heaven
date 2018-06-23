@@ -1,0 +1,214 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+
+<div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>회원 가입</strong></li>
+    </ol>
+</div>
+
+<div class="titleArea">
+    <h2>회원 가입</h2>
+</div>
+
+<div module="Member_AdultHead">
+<!--@css(/css/module/member/296/adulthead.css)-->
+
+    <div class="under19">
+        <div class="msg">
+            <h2>19세 미만의 미성년자는 <br />출입을 금합니다.</h2>
+            <p class="info">
+                이 정보내용은 청소년 유해매체물로서 <br />
+                정보통신망 이용촉진법 및 정보보호 등에 관한 법률 및 청소년 보호법의 <br />
+                규정에 의하여 19세 미만의 청소년은 사용할 수 없습니다. <br />
+                <span>미성년자 차단을 위하여 <em>로그인 또는 본인인증 절차</em>를 거치셔야 합니다.</span>
+            </p>
+            <a href="{$outlink}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/intro/btn_under19ipin.gif" alt="19세 미만 나가기" /></a>
+        </div>
+    </div>
+
+    <div class="member" {$display_auth}>
+        <h2><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/intro/h2_ipinNoMember.gif" alt="비회원 성인인증" /></h2>
+        <div class="inner">
+            {$radioAuthIpin} <label for='{$idAuthIpin}' {$ipinAuthRadioView}>아이핀(i-PIN) 인증</label>&nbsp;
+            {$radioAuthMobile} <label for='{$idAuthMobile}' {$mobileauthAuthRadioView}>휴대폰 인증</label>
+            <p class="ipin" id='ipin' {$ipinAuthRadioView} >
+                <span><a href="#none" onclick="{$ipinpopup}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_check6.gif" alt="아이핀 인증" style="vertical-align:middle" /></a></span>
+                아이핀이란, 회원님의 개인정보 보호를 위해 <br />
+                웹사이트에 주민등록번호를 제공하지 않고,<br />
+                본인임을 확인하는 인터넷상의 개인식별번호 서비스입니다.<br />
+                아이핀을 통한 가입을 원하시면 아이핀 인증 버튼을 눌러 진행해 주십시오.
+            </p>
+            <p class="ipin" id='mobileauth' {$mobileauthAuthRadioView} {$mobileauthAuthRadioViewDevault}>
+                <span><a href="#none" onclick="{$mobileauthpopup}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_check5.gif" alt="휴대폰 인증" style="vertical-align:middle" /></a></span>
+                본인 명의의 휴대폰으로 본인인증을 진행합니다.<br>
+                휴대폰 명의자의 나이 정보로 14세 미만 여부를 확인합니다.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div module="member_join">
+<!--@css(/css/module/member/257/join.css)-->
+    <!--
+        $returnUrl = /member/join_result.html
+        $checkIdUrl = /member/check_id.html
+        $personalName = 이름
+     -->
+    
+
+    <h3>기본정보</h3>
+    <p class="required"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /> 필수입력사항</p>
+    <div class="boardWrite">
+        <table border="1" summary="">
+        <caption>회원 기본정보</caption>
+        <tbody>
+            <tr>
+                <th scope="row">아이디 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /></th>
+                <td>{$form.member_id} <a href="#none" onclick="{$action_check_id}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_overlap_id.gif" alt="아이디 중복확인" /></a> (영문소문자/숫자, 4~16자)</td>
+            </tr>
+            <tr>
+                <th scope="row">비밀번호 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /></th>
+                <td>{$form.passwd} {$passwd_type_desc}</td>
+            </tr>
+            <tr>
+                <th scope="row">비밀번호 확인 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /></th>
+                <td>{$form.user_passwd_confirm}</td>
+            </tr>
+            <tr>
+                <th scope="row" id="{$name_title}">이름 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /></th>
+                <td>
+                    <span id="{$name_contents}">{$form.name}</span>
+                </td>
+            </tr>
+            <tr class="{$display_nick|display}">
+                <th scope="row">별명 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" class="{$display_required_nick_name_flag|display}" alt="필수" /></th>
+                <td>{$form.nick_name} (한글2~10자/영어4~20자/숫자 혼용가능)</td>
+            </tr>
+            <tr class="{$display_birthday|display}">
+                <th scope="row">생년월일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" class="{$display_required_is_birthday|display}" alt="필수" /></th>
+                <td>{$form.birth_year} 년 {$form.birth_month} 월 {$form.birth_day} 일 <span class="birth {$display_calendar_type|display}">{$form.is_solar_calendar}</span></td>
+            </tr>
+            <tr>
+                <th scope="row">이메일 <img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif" alt="필수" /></th>
+                <td>{$form.email}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <h3>이용약관 동의</h3>
+    <div class="agreeArea">
+        <div class="agree">
+            {$service_desc}
+        </div>
+        <p class="check"><span>이용약관에 동의하십니까?</span> {$form.agree_service_check}</p>
+    </div>
+
+    <h3>개인정보 수집 및 이용 동의</h3>
+    <div class="agreeArea">
+        <div class="agree">
+            {$privacy_desc}
+        </div>
+        <p class="check"><span>개인정보 수집 및 이용에 동의하십니까?</span> {$form.agree_privacy_check}</p>
+    </div>
+
+    <div class="{$display_information|display}">
+        <h3>개인정보 제3자 제공 동의(선택)</h3>
+        <div class="agreeArea">
+            <div class="agree">
+                {$information_desc}
+            </div>
+            <p class="check"><span>개인정보 제3자 제공에 동의하십니까?</span> {$form.agree_information_check}</p>
+        </div>
+    </div>
+
+    <div class="{$display_consignment|display}">
+        <h3>개인정보 취급 위탁 동의(선택)</h3>
+        <div class="agreeArea">
+            <div class="agree">
+                {$consignment_desc}
+            </div>
+            <p class="check"><span>개인정보 취급 위탁에 동의하십니까?</span> {$form.agree_consignment_check}</p>
+        </div>
+    </div>
+
+    <div class="btnArea center">
+        <a href="#none" onclick="
+                                 fnAge();
+                                 if (years > 19)
+                                 	{$action_func_join};
+                                 else
+                                 	alert('만 19세 미만은 가입하실 수 없습니다.');
+                                 
+                                 "><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_member_join1.gif" alt="회원가입" /></a>
+        <a href="/"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_member_join_cancel.gif" alt="회원가입취소" /></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var years;
+
+  // 나이 계산
+  function fnAge()
+  {
+   var today = new Date();
+   var y = $(birth_year).val();
+
+   if(y == '' || y.length < 4)
+   {
+    alert('년도(예>1990)를 입력하세요.');
+    $(birth_year).focus();
+    return false;
+   }
+
+   if(Number(y) < (today.getFullYear() - 150))
+   {
+    alert('나이가 너무 많습니다.');
+    $(birth_year).focus();
+    return false;
+   }
+
+   if(Number(y) >= today.getFullYear())
+   {
+    alert('1살 이하입니다.');
+    $(birth_year).focus();
+    return false;
+   }
+
+   var m = $(birth_month).val();
+
+   if(m == '' || m.length < 1 || (Number(m) < 1 || Number(m) > 12))
+   {
+    alert('월(예>1~12)을 입력하세요.');
+    $(birth_month).focus();
+    return false;
+   }
+
+   var d = $(birth_day).val();
+
+   if(d == '' || d.length < 1 || (Number(d) < 1 || Number(d) > 31))
+   {
+    alert('일(예>1~31)을 입력하세요.');
+    $(birth_day).focus();
+    return false;
+   }
+
+   var birthday = new Date(m + '/' + d + '/' + y);
+   years = today.getFullYear() - birthday.getFullYear();
+
+   // 현재 년도에서 생일을 재설정
+   birthday.setFullYear(today.getFullYear());
+
+   // 생일이 지났으면 -1
+   if(today < birthday)
+   {
+    years--;
+   }
+  }
+    
+</script>
+

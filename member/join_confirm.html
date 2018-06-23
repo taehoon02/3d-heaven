@@ -1,0 +1,46 @@
+<div id="{$join_confirm_layer_id}" class="joinConfirm ec-base-layer">
+    <!--@css(/layout/basic/css/ec-base-layer.css)-->
+    <!--@css(/css/module/member/join_confirm.css)-->
+    <div class="header">
+        <h3>가입 정보 확인</h3>
+    </div>
+    <div class="content">
+        <p>아직 회원가입이 완료되지 않았으니, 작성하신 내용을 확인하신 후에 가입을 완료해 주세요.</p>
+        <div class="ec-base-table">
+            <table border="1" summary="">
+                <caption>가입 정보 확인</caption>
+                <colgroup>
+                    <col style="width:130px;" />
+                    <col style="width:auto;" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">아이디</th>
+                        <td><span id="{$join_confirm_field_member_id}"></span></td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row" id="{$join_confirm_name_title}">이름</th>
+                        <td id="{$join_confirm_name_contents}"></td>
+                    </tr>
+                    
+                    <tr class="{$display_mobile|display}">
+                        <th scope="row">휴대전화</th>
+                        <td><span id="{$join_confirm_field_mobile}"></span></td>
+                    </tr>
+                    
+                    <tr class="{$display_birthday|display}">
+                        <th scope="row">생년월일</th>
+                        <td><span id="{$join_confirm_field_birth_year}"></span><span>/</span><span id="{$join_confirm_field_birth_month}"></span><span>/</span><span id="{$join_confirm_field_birth_day}"></span> <span class="{$display_calendar_type|display}">(<span id="{$join_confirm_field_is_solar_calendar}"></span>)</span></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="ec-base-button">
+        <a href="#none"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_member_join2.gif" alt="회원가입" id="{$btn_layer_join_id}" /></a>
+        <a href="#none"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/common/btn_layer_close.gif" alt="닫기" onclick="{$join_confirm_layer_off}" /></a>
+    </div>
+    <a href="#none" class="close"><img src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif" alt="닫기" onclick="{$join_confirm_layer_off}" /></a>
+</div>

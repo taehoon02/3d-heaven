@@ -1,0 +1,106 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+    <div module="Product_menupackage">
+        <!--@css(/css/module/product/menupackage.css)-->
+        <div class="path" module="product_headcategory">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><strong><a href="/board/3D Toons/list.html?cate_no=28">3D Toons</a></strong></li>
+            </ol>
+        </div>
+        
+        
+        <ul class="menuCategory">
+            <!-- 참고 : 뉴상품관리 전용 모듈입니다. 뉴상품관리 이외의 곳에서 사용하면 정상동작하지 않습니다. -->
+            <li module="product_displaycategory" style="display:{$display};" class="{$selected}">
+                <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="count {$product_count_display|display}">({$product_count})</span></a>
+                <ul module="product_children">
+                    <li class="{$selected}">
+                        <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                        <div class="button">
+                            {$children_icon}
+                            <ul module="product_children" class="subCategory">
+                                <li class="{$selected}"><a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
+                                <li class="{$selected}"><a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="{$selected}">
+                        <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                        <div class="button">
+                            {$children_icon}
+                            <ul module="product_children" class="subCategory">
+                                <li class="{$selected}"><a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
+                                <li class="{$selected}"><a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li><!-- //참고 -->
+        </ul>
+    </div>
+
+    
+
+    
+
+    <div module="product_normalpackage">
+        <!--@css(/css/module/product/listnormal.css)-->
+        <!--@js(/js/module/product/product_selectsearch.js)-->
+        <div module="product_normalmenu">
+            <!--
+                $compare_page = /product/compare.html
+            -->
+            <div class="title" id="{$listmenu_position}">
+                <h3><span>3D Toons</span></h3>
+            </div>
+            
+        </div>
+        <div module="product_listnormal">
+            <!--
+                $count = 8
+                $basket_result = /product/add_basket.html
+                $basket_option = /product/basket_option.html
+            -->
+            <ul class="prdList column4">
+                <li class="item" id="anchorBoxId_{$product_no}">
+                <div class="box">
+                    <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                    <a href="/board/3D Toons/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
+                    
+                    <p class="name">
+                        <strong><a href="/board/3D Toons/detail.html{$param}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                    </p>
+                    
+                </div>
+                </li>
+                <li class="item" id="anchorBoxId_{$product_no}">
+                <div class="box">
+                    <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                    <a href="/board/3D Toons/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></a>
+                    
+                    <p class="name">
+                        <strong><a href="/board/3D Toons/detail.html{$param}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                    </p>
+                    
+                </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div module="product_normalpaging">
+        <!--@css(/css/module/product/normalpaging.css)-->
+        <p class="first"><a href="{$param_first}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_page_first.gif" alt="첫 페이지" /></a> </p>
+        <p><a href="{$param_before}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_page_prev.gif" alt="이전 페이지" /></a></p>
+        <ol>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        </ol>
+        <p><a href="{$param_next}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_page_next.gif" alt="다음 페이지" /></a> </p>
+        <p class="last"><a href="{$param_last}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_page_last.gif" alt="마지막 페이지" /></a> </p>
+    </div>

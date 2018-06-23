@@ -1,0 +1,154 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/viewerjs/dist/viewer.min.js)-->
+<!--@css(/viewerjs/dist/viewer.min.css)-->
+
+<div module="Product_menupackage" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <!--@css(/css/module/product/menupackage.css)-->
+    <div class="path" module="product_headcategory">
+        <span>현재 위치</span>
+        <ol>
+            <li><a href="/">홈</a></li>
+            <li><strong><a href="/board/3D Toons/list.html?cate_no=28">3D Toons</a></strong></li>
+        </ol>
+    </div>
+</div>
+
+<div module="product_detail" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <!--@css(/css/module/product/378/detail.css)-->
+  <!--@js(/js/module/product/378/detail.js)-->
+
+  <div class="headingArea">
+    <h2 style="font-size: 1.2rem">{$name}</h2>
+  </div>
+
+  <div class="detailArea">
+    <!-- 이미지 영역 -->
+    <div class="imgArea" module="product_image">
+      <div id="image" class="keyImg">
+        <img src="{$big_img}" alt="" class="{$big_img_class} {$img_display|display}" />
+      </div>
+    </div>
+    <!-- //이미지 영역 -->
+
+    <!-- 상세정보 내역 -->
+    <div class="infoArea">
+      <div module="product_additional">
+        <!-- 상품상세정보 -->
+        <div id="prdDetail">
+          <span>{$product_detail}</span>
+        </div>
+        <!-- //상품상세정보 -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div module="product_additional" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <!--@css(/css/module/product/3155/additional.0.css)-->
+  <!--@css(/css/module/product/3155/additional.1.css)-->
+  <!--@js(/js/module/product/3155/additional.0.js)-->
+  <!--@js(/js/module/product/3155/additional.1.js)-->
+  <!--@js(/js/module/product/3155/additional.2.js)-->
+  <div id="tabProduct">
+    <ul class="link">
+      
+    </ul>
+  </div>
+  <!-- 상품상세정보 -->
+  <div id="prdDetail">
+    
+      <div class="list" module="product_listmain_1">
+            <!--
+				$count = 1
+                $basket_result = /product/add_basket.html
+                $basket_option = /product/basket_option.html
+            -->
+          	
+          	<div class="listImg" module="product_addimage">
+                <ul id="images" class="prdList column4">
+                    <li class="item">
+                        <div class="box">
+                            {$add_img}
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            {$add_img}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      
+      
+  </div>
+  <!-- //상품상세정보 -->
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+<style>
+	#images {
+    	display: flex;
+    	justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .list img {
+    	width: 240px;
+    	height: auto;
+        border: solid 1px gray;
+        margin: 5px;
+        cursor: zoom-in;
+    }
+</style>
+
+<script type="text/javascript">
+    document.getElementById('image').addEventListener('click', function () {
+        var viewer = new Viewer(document.getElementById('image'), {
+          	navbar: false,
+            viewed: function() {
+                viewer.zoomTo(1.0);
+            },
+        });
+      });
+    
+    document.getElementById('images').addEventListener('click', function () {
+        var viewer = new Viewer(document.getElementById('images'), {
+            fullscreen: true,
+            viewed: function() {
+                viewer.zoomTo(1.0);
+            },
+        });
+      });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

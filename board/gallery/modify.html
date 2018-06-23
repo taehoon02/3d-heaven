@@ -1,0 +1,68 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div module="board_ModifyPackage_8">
+    <!--@css(/css/module/board/modifyPackage.css)-->
+    <div module="board_title_8">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><strong><a href="/board/gallery/list.html">3D Toons</a></strong></li>
+            </ol>
+        </div>
+
+        <div class="title">
+            <h2>{$board_title}</h2>
+            <p>{$board_info}</p>
+        </div>
+    </div>
+
+    <div module="board_modify_8">
+        <div class="ec-base-table typeWrite">
+            <table border="1" summary="">
+            <caption>글 수정 폼</caption>
+            <colgroup>
+                <col style="width:130px;" />
+                <col style="width:auto;" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td>{$form.board_category} {$form.subject} {$form.notice} {$form.is_post}</td>
+                </tr>
+                <tr class="{$config.is_login|display}">
+                    <th scope="row">작성자</th>
+                    <td>{$form.writer}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="clear">
+                        {$form.content}
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody class="{$config.use_attach|display}">
+                <tr>
+                    <th scope="row">첨부파일1</th>
+                    <td>{$form.attach_file} {$attached_file1}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일2</th>
+                    <td>{$form.attach_file} {$attached_file2}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일3</th>
+                    <td>{$form.attach_file} {$attached_file3}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="ec-base-button">
+            <span class="gLeft"><a href="{$link_board_list}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_list.gif" alt="목록" /></a></span>
+            <span class="gRight">
+                <a href="#none" onclick="{$action_modify}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_modify.gif" alt="수정" /></a>
+                <a href="{$link_board_list}"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/board/btn_cancel.gif" alt="취소" /></a>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div module="board_writePackage_3001">
+<!--@css(/css/module/board/319/writepackage_3001.css)-->
+    <div module="board_title_3001">
+        <div class="path">
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="title">
+            <h2>{$board_title}</h2>
+            <p>{$board_info}</p>
+        </div>
+    </div>
+
+    <div module="board_write_3001">
+        <!--
+            $login_page_url = /member/login.html
+            $deny_access_url = /index.html
+        -->
+        <div class="boardWrite">
+            <table border="1" summary="">
+            <caption>글쓰기 폼</caption>
+
+            <tbody>
+                <tr class="first">
+                    <th scope="row">제목</th>
+                    <td>{$form.board_category} {$form.subject} {$form.notice} {$form.is_post}</td>
+                </tr>
+                <tr class="{$config.is_login|display}">
+                    <th scope="row">작성자</th>
+                    <td>{$form.writer}</td>
+                </tr>
+                <tr class="{$config.use_write_email|display}">
+                    <th scope="row">이메일</th>
+                    <td>{$form.email}</td>
+                </tr>
+                <tr class="{$config.is_use_point|display}">
+                    <th scope="row">평점</th>
+                    <td>{$form.point}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="write">
+                        {$form.content}
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody class="{$config.use_attach|display}">
+                <tr>
+                    <th scope="row">첨부파일1</th>
+                    <td>{$form.attach_file}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일2</th>
+                    <td>{$form.attach_file}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일3</th>
+                    <td>{$form.attach_file}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일4</th>
+                    <td>{$form.attach_file}</td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부파일5</th>
+                    <td>{$form.attach_file}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="btnArea">
+            <span class="left"><a href="/board/3D Pics/list.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_list.gif" alt="목록" /></a></span>
+            <a href="#none" onclick="{$action_write}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_register.gif" alt="등록" /></a>
+            <a href="/board/3D Pics/list.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_cancel.gif" alt="취소" /></a>
+        </div>
+    </div>
+</div>
+

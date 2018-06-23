@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--PG크로스브라우징필수내용 시작-->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!--PG크로스브라우징필수내용 끝-->
+
+    <title>3DHeaven</title>
+    <!--@css(/layout/basic/css/common.css)--><!--해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요.-->
+    <!--@css(/layout/basic/css/layout.css)-->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-product.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+
+    <!-- 스마트디자인에서는 JQuery 1.4.4 버전이 내장되어있습니다. 추가로 호출하면 충돌이 생길 수 있습니다. -->
+    <!--@js(/layout/basic/js/basic.js)-->
+    <!--@js(/js/common.js)-->
+    <!--@js(/js/module/layout/quick_view.js)-->
+    <script type="text/javascript" src="/ec-js/common.js"></script><!-- 해당 JS는 플래시를 사용하기 위한 스크립트입니다. -->
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<div id="header">
+<div class="inner">
+    <div class="topArea">
+        <h1 module="Layout_LogoTop">
+            <!--@css(/css/module/layout/logotop.css)-->
+            <a href="/">3DHeaven</a>
+        </h1>
+    </div>
+
+    <div module="Layout_statelogoff">
+        <!--@css(/css/module/layout/statelogoff.css)-->
+        <a href="/member/login.html" class="log">로그인</a>
+        <a href="/member/join.html">회원가입</a>
+        <a href="/board/3D Toons/list.html?cate_no=28">3D Toons</a>
+        <a href="/board/3D Pics/list.html?cate_no=28">3D Pics</a>
+        <a href="/board/free/list.html">사진</a>
+        <a href="/board/QnA/list.html">Q&A</a>
+    </div>
+
+    <div module="Layout_stateLogon">
+        <!--@css(/css/module/layout/statelogon.css)-->
+        <a href="/"><strong>{$nick}</strong>님 환영합니다.</a>
+        <a href="{$action_logout}" class="log">로그아웃</a>
+        <a href="/board/3D Toons/list.html?cate_no=28">3D Toons</a>
+        <a href="/board/3D Pics/list.html?cate_no=28">3D Pics</a>
+        <a href="/board/free/list.html">사진</a>
+        <a href="/board/QnA/list.html">Q&A</a>
+        <a href="/member/modify.html">회원정보수정</a>
+    </div>
+</div>
+</div>
+
+    
+    
+    
+    
+<div id="wrap">
+    <div id="container">
+        <div id="contents">
+            <!--@contents-->
+        </div>
+    </div>
+</div>
+
+<div module="Layout_conversionPc">
+    <!--@css(/css/module/layout/conversionpc.css)-->
+    <a href="{$mobile_url}">모바일 화면보기</a>
+</div>
+    
+</body>
+</html>
