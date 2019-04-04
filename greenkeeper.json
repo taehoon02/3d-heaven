@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "viewerjs/package.json"
+      ]
+    }
+  }
+}
